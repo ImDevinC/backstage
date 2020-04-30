@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
-export { default, StepType } from './Sequence';
+import BasicVerticalStepper from './BasicVerticalStepper';
+import BasicVerticalStep from './BasicVerticalStep';
+
+export { BasicVerticalStepper, BasicVerticalStep };
