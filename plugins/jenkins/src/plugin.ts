@@ -13,10 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export { plugin as HomePagePlugin } from '@backstage/plugin-home-page';
-export { plugin as WelcomePlugin } from '@backstage/plugin-welcome';
-export { plugin as LighthousePlugin } from '@backstage/plugin-lighthouse';
-export { plugin as InventoryPlugin } from '@backstage/plugin-inventory';
-export { plugin as ScaffolderPlugin } from '@backstage/plugin-scaffolder';
-export { plugin as TechRadar } from '@backstage/plugin-tech-radar';
-export { plugin as Jenkins } from '@backstage/plugin-jenkins';
+
+import { createPlugin } from '@backstage/core';
+// import ExampleComponent from './components/ExampleComponent';
+import JenkinsComponent from './components/JenkinsComponent';
+
+export const plugin = createPlugin({
+  id: 'jenkins',
+  register({ router }) {
+    router.registerRoute('/jenkins', JenkinsComponent);
+  },
+});
